@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by MabTee (http://jsbin.com/xecipoq/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Penelope Garcia">
+  <meta name="keywords" content="HTML, CSS, profil card, Penelope Garcia">
+  <meta name="author" content="MabTee">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>Penelope Garcia, with responsive webdesign</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <style id="jsbin-css">
+/* ====CSS RESET FROM ERIC MEYER==== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*===Box-modell===*/
+
+* {
+  box-sizing: border-box;
+}
+
+/*==Általános beállítások, general styles==*/
+
+/*Vertikális ritmus*/
+
+/*.name-headline, .profile-card, hr*/
+ul,ol,dd,
+p,section,
+ {
+    margin-bottom: 1rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://i.imgur.com/uKCjz9A.jpg') no-repeat fixed;
+  background-size: cover;
+}
+
+img {
+  margin-top: 2rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 20%;
+  padding: 0.08rem;
+  background-color: #666;
+  filter: grayscale(50%);
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(20%);
+   opacity: .8;
+}
+
+h1, h3{
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+h2, h3{
+  font-variant: small-caps;
+  font-size: 1.15rem;
+}
+
+/*Link*/
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+}
+
+/* ==Megjelenítések, layout styles== */
+
+.profile-card{
+  border-radius: 4px;
+  box-shadow: hsla(0, 0%, 0%, .8) 10px 10px 80px;
+  background-color: hsla(0, 0%, 100%, .6);
+  /* width: 90%; /*Pozicionálás */
+  width: calc(100vw - 15px);
+  padding: 0.25rem;
+ 
+}
+
+.profile-image {
+  margin-top: -3.5rem;
+}
+
+
+.head, .links {
+  text-align: center;
+}
+
+.head, .content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.head, .about {
+  margin-bottom: 10%;
+}
+
+.content {
+  padding: 5% 10%;
+  border-top: 1px solid hsla(0, 0%, 30%, .8);
+  margin-top: -1.05rem;
+}
+
+.about{
+  color: #000000;
+  text-align: justify;
+  font-size: 1.15rem;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  height: 3rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn:hover{
+  transition: all .15s ease-in-out;
+}
+
+@media (min-width: 320px) {
+
+	.profile-card {
+	  margin-top: 0.5rem;
+		width: 85vw;
+    height: 90vh;  
+	}
+
+  img{
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .name-headline{
+    margin-top: 1rem;
+  }
+  
+  .about{
+    font-size: 1rem;
+  }
+
+}
+
+@media (min-width: 380px) {
+
+	.profile-card {
+	  margin-top: 0.5rem;
+		width: 85vw;
+    height: 90vh;  
+	}
+
+  img{
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  
+  .name-headline{
+    margin-top: 1rem;
+  }
+  
+  .about{
+    font-size: 1.25rem;
+  }
+
+}
+
+
+@media only screen and (min-width: 480px) {
+
+	.profile-card {
+	  margin-top: 0.5rem;
+		width: 85%;
+    height: 90vh;  
+	}
+
+  img{
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .name-headline{
+    margin-top: 1rem;
+  }
+  
+  .about{
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+	.profile-card {
+	  margin-top: 0.5rem;
+		width: 85vw;
+    height: calc(100vh-15px);  
+	}
+
+  img{
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+  
+  .name-headline{
+    margin-top: 1rem;
+  }
+  
+  .about{
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+	.profile-card {
+	  margin-top: 0.5rem;
+		width: 85vw;
+    height: 85vh;  
+	}
+
+  img{
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .name-headline{
+    margin-top: 1rem;
+  }
+  
+  .about{
+    font-size: 2rem;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+	.profile-card {
+	  margin-top: 0.5rem;
+		width: 85vw;
+    height: 85vh;  
+	}
+
+  img{
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  
+  .name-headline{
+    margin-top: 1rem;
+  }
+  
+  .about{
+    font-size: 1.5rem;
+  }
+
+}
+
+@media only screen and (min-width: 1032px) {
+
+	.profile-card {
+		width: 50vw;
+    height: 90vh;
+	}
+
+  img{
+    width: 8rem;
+    height: 8rem;
+    margin-left: 1rem;
+  }
+  
+  .name-headline{
+    margin-top: 3rem;
+  }
+  
+  .about{
+    margin-top: -1rem;
+    font-size: 1.25rem;
+  }
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.profile-card {
+		width: 50vw;
+    height: 90%;
+	}
+
+  img{
+    width: 7.6rem;
+    height: 7.6rem;
+    margin-left: 1rem;
+  }
+  
+  .name-headline{
+    margin-top: 2.5rem;
+  }
+  
+  .about{
+    margin-top: -1.2rem;
+    font-size: 1.25rem;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+ <body>
+  <div class="profile-card">
+    <div class="head"> <!--Fejrész képpel-->
+      <div class="profile-image"></div>
+      <img src="https://i.imgur.com/VpBTZaY.jpg" alt="Penelope Garcia">
+      <img src="https://i.imgur.com/Y0a7KJX.jpg" alt="Penelope Garcia2">
+      <img src="https://i.imgur.com/yAn9wHf.jpg" alt="Penelope Garcia3">
+      <div class="name-headline">
+        <h1>PENELOPE GARCIA</h1>
+        <h2>Technical analyst, BAU</h2>
+        <span>from</span>
+        <h3><p><i class="fa fa-map-marker"></i>Quantico, USA</p></h3>
+      </div>   
+    </div>
+    <div class="content"> <!--Bemutatkozó szöveg-->
+      <p class="about">Penelope Grace Garcia is a fictional character on the CBS crime dramas Criminal Minds, portrayed by Kirsten Vangsness. She is the technical analyst of the Behavioral Analysis Unit. </p>
+      <section class="links"> <!--ikonok-->
+        <ul>
+          <li> <a href="https://www.facebook.com/KirstenVangsnessFansPG/" title="Facebook" class="social-icon" btn><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a> </li>
+          <li> <a href="https://twitter.com/vangsness" title="Twitter" class="social-icon" btn><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a> </li>
+          <li> <a href="https://www.instagram.com/kirstenvangsness/" title="Instagram" class="social-icon" btn><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a> </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+ </body>
+</html>
